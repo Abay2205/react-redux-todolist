@@ -1,38 +1,28 @@
 .App {
+  height: 100vh;
+  background: url("images/Lawrencium.jpg") center no-repeat;
+  background-size: cover;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffffa6;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.zagolovok {
+  padding-top: 20px;
+  margin: 0 0 20px 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  background: border-box;
+  border-color: #ffffffa6;
+  border-top: none;
+  width: 200px;
+  color: #ffffffa6;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background: border-box;
+  /*border: none;*/
+  color: #ffffffa6;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
 }

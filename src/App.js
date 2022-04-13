@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import InputField from "./InputField";
+import TodosList from "./TodosList";
+import {connect} from "react-redux";
+import {deleteAll} from "./redux/actions/addTodo";
 
-function App() {
+
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1 className='zagolovok' style={{textDecoration: 'underline'}}>Todos App</h1>
+      <InputField/>
+        <TodosList/>
+        <div>Todos:{props.todos.length}</div>
+        <div>
+            <button onClick={() => props.deleteAll()}>Delete all</button>
+        </div>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+    deleteAll: () => dispatch(deleteAll())
+})
+const mapStateToProps = state => ({
+    todos: state.todos
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
